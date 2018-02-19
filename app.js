@@ -145,16 +145,21 @@
 	  this.gl.shaderSource( this.vShader, this.vSource );
 	  this.gl.compileShader( this.vShader )
 
+	  console.log(this.gl.getShaderInfoLog( this.vShader ))
+
 	  this.fSource = document.getElementById('fragment').text
 	  this.fShader = this.gl.createShader( this.gl.FRAGMENT_SHADER )
 	  this.gl.shaderSource( this.fShader, this.fSource );
 	  this.gl.compileShader( this.fShader )
+
+	  console.log(this.gl.getShaderInfoLog( this.fShader ))
 
 	  this.program = this.gl.createProgram()
 	  this.gl.attachShader( this.program, this.vShader )
 	  this.gl.attachShader( this.program, this.fShader )
 	  this.gl.linkProgram( this.program )
 	  this.gl.useProgram( this.program )
+
 
 	  var position = this.gl.getAttribLocation( this.program, 'aPosition' )
 	  this.gl.enableVertexAttribArray( position )
@@ -165,7 +170,7 @@
 	  );
 	  this.gl.enableVertexAttribArray( this.program.textureCoordAttribute );
 	  this.gl.vertexAttribPointer(
-	  	this.program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0
+	  	this.program.textureCoordAttribute, 2, this.gl.FLOAT, false, 0, 0
 	  );
 	  this.program.samplerUniform = this.gl.getUniformLocation( this.program, 'uSampler')
 	  this.gl.uniform1i( this.program.samplerUniform, 0 )
