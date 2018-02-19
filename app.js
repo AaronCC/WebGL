@@ -85,8 +85,8 @@
 		this.gl.texImage2D(
 			this.gl.TEXTURE_2D, 0, this.gl.RGBA, this.gl.RGBA, this.gl.UNSIGNED_BYTE, this.canvas
 		)
-		this.gl.texParameteri(this.gl.TEXTURE2D, this.gl.TEXTURE_MAG_FILTER, this.gl.LINEAR )
-		this.gl.texParameteri(this.gl.TEXTURE2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR )
+		this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MAG_FILTER, this.gl.LINEAR )
+		this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR )
 	},
 
 	webglSetup() {
@@ -194,8 +194,10 @@
     },
     
     fullScreenCanvas() {
-      this.canvas.width  = this.height = window.innerWidth
-      this.canvas.height = this.width  = window.innerHeight
+      this.canvas.width  = this.width = window.innerWidth
+      this.canvas.height = this.height  = window.innerHeight
+	  this.glCanvas.width = this.width = window.innerWidth
+	  this.glCanvas.height = this.height = window.innerHeight
     },
     
     // update your simulation here
