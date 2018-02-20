@@ -119,6 +119,7 @@
 	  this.getTexture = this.getTexture.bind( this )
 	  this.nodes = new Array(this.nodeCount);
 	  this.canvas.width = this.canvas.height = 256;  
+	  this.canvas.style.display = 'none'
 
 	  this.glCanvas = document.getElementById('gl');
 	  this.glCanvas.width = this.glCanvas.height = 256;
@@ -194,10 +195,6 @@
     },
     
     fullScreenCanvas() {
-      this.canvas.width  = this.width = window.innerWidth
-      this.canvas.height = this.height  = window.innerHeight
-	  this.glCanvas.width = this.width = window.innerWidth
-	  this.glCanvas.height = this.height = window.innerHeight
     },
     
     // update your simulation here
