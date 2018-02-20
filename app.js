@@ -22,7 +22,7 @@
 	this.rect = new intRect(posX,posY,width,height);
 	this.x = x;
 	this.y = y;
-	this.nextGen = false; // The next state		this.gl.texParameteri(gl.TEXTURE2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR )
+	this.nextGen = false; // The next state
 	this.draw = function(ctx) {
 		if(this.alive == true)
 		{
@@ -83,7 +83,7 @@
 		this.gl.pixelStorei(this.gl.UNPACK_FLIP_Y_WEBGL, true);
 		this.gl.bindTexture( this.gl.TEXTURE_2D, this.texture);
 		this.gl.texImage2D(
-			this.gl.TEXTURE_2D, 0, this.gl.RGBA, this.gl.RGBA, this.gl.UNSIGNED_BYTE, this.canvas
+		this.gl.TEXTURE_2D, 0, this.gl.RGBA, this.gl.RGBA, this.gl.UNSIGNED_BYTE, this.canvas
 		)
 		this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MAG_FILTER, this.gl.LINEAR )
 		this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR )
